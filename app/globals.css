@@ -2,14 +2,14 @@
 
 @theme {
 	--background-image-album-cover: url("/panic-panini-album.jpg");
-	--background-image-incoming-shows: url("/coming-shows-bg.jpg");
+	--background-image-incoming-shows: url("/_coming-shows-bg.jpg");
 	--background-image-hero-pattern: url("/pattern.png");
 
 	--font-permanent-marker: var(--font-permanent-marker), cursive;
 	--font-poppins: var(--font-poppins), sans-serif;
 	--font-rock-salt: var(--font-rock-salt), cursive;
 
-	--color-fluo-green: #43ffb6;
+	--color-fluo-red: #521018;
 	--color-yellow-btn-primary: #ffc621;
 	--color-medium-gray: #bebebe;
 
