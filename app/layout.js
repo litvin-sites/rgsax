@@ -25,8 +25,8 @@ const rockSalt = Rock_Salt({
 });
 
 export const metadata = {
-	title: "Free Next.js Music band starter template | by Imagination",
-	description: "Free Next.js rock'n'roll band starter template to clone/fork from my Github page.",
+	title: "Imagination cover band ",
+	description: "Вот что получилось, когда смешали красоту, любовь к музыке и непосредственность. ",
 	verification: {
 		google: "ephPAYWfbfSOHHWnGeqEHiOPuxTXr300eIzTmT2oJcY",
 	},
@@ -35,7 +35,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html
-			lang="en"
+			lang="ru"
 			className={`${poppins.variable} ${permanentMarker.variable} ${rockSalt.variable}`}>
 			<body className={`${poppins.className} font-rendering text-2xl xl:text-3xl`}>
 				{children}
