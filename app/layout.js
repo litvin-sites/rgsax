@@ -25,8 +25,8 @@ const rockSalt = Rock_Salt({
 });
 
 export const metadata = {
-	title: "Imagination cover band ",
-	description: "Вот что получилось, когда смешали красоту, любовь к музыке и непосредственность. ",
+	title: "Imagination",
+	description: "Вот что получилось, когда смешали красоту, любовь к музыке и непосредственность.",
 	verification: {
 		google: "ephPAYWfbfSOHHWnGeqEHiOPuxTXr300eIzTmT2oJcY",
 	},
