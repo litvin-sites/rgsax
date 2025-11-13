@@ -4,23 +4,24 @@ import sharp from 'sharp';
 import { PATHS } from '../../config.js';
 import { userCtx, saveStore } from '../../store.js';
 import { nanoid } from 'nanoid';
+import { mainKb } from '../keyboards.js';
 
-const GALLERY_ROOT   = path.join(PATHS.root, '..', 'public', 'gallery');
-const THUMB_DIR      = path.join(GALLERY_ROOT, 'thumbnails');
-const SLIDER_DIR     = path.join(GALLERY_ROOT, 'slider-images');
-const META_FILE      = path.join(GALLERY_ROOT, 'galleryThumbnails.json');
+const GALLERY_ROOT = path.join(PATHS.root, '..', 'public', 'gallery');
+const THUMB_DIR = path.join(GALLERY_ROOT, 'thumbnails');
+const SLIDER_DIR = path.join(GALLERY_ROOT, 'slider-images');
+const META_FILE = path.join(GALLERY_ROOT, 'galleryThumbnails.json');
 
 /* ---------- публикация ---------- */
 export async function publishCmd(ctx) {
   const uid = String(ctx.from.id);
-  const u   = userCtx(uid);
+  const u = userCtx(uid);
   if (!u.albums.length) return ctx.reply('📂 Нет альбомов для публикации.', mainKb());
 
   await ctx.reply('🚀 Начинаю публикацию…');
 
   try {
     /* 1. чистим старую галерею */
-    await fs.remove(GALLERY_ROOT).catch(() => {});;
+    await fs.remove(GALLERY_ROOT).catch(() => {});
     await fs.ensureDir(THUMB_DIR);
     await fs.ensureDir(SLIDER_DIR);
 
@@ -38,19 +39,22 @@ export async function publishCmd(ctx) {
       const thumbName = `thumbnail-${al.id}.jpg`;
       const thumbDest = path.join(THUMB_DIR, thumbName);
       if (al.cover) {
-        const coverPath = path.join(PATHS.root, al.cover);
-        await sharp(coverPath)
-              .resize(400, 400, { fit: 'cover', position: 'center' })
-              .jpeg({ quality: 90 })
-              .toFile(thumbDest);
+        const coverPath = path.join(PATHS.root, 'storage', al.cover);
+        if (!(await fs.pathExists(coverPath))) {
+          console.warn('[publish] обложка не найдена:', coverPath);
+        } else {
+          // копируем готовый 400×400-файл
+          const thumbDest = path.join(THUMB_DIR, `thumbnail-${al.id}.jpg`);
+          await fs.copy(coverPath, thumbDest);
+        }
       }
 
       /* 4b. фото альбома → slider-{num}.jpg (без resize) */
       const photos = [];
       for (const rel of al.photos) {
-        const src   = path.join(PATHS.root, rel);
-        const name  = `slider-${sliderCounter}.jpg`;
-        const dest  = path.join(SLIDER_DIR, name);
+        const src = path.join(PATHS.root, 'storage', rel);
+        const name = `slider-${sliderCounter}.jpg`;
+        const dest = path.join(SLIDER_DIR, name);
         await fs.copy(src, dest);
         photos.push({ src: `/gallery/slider-images/${name}` });
         sliderCounter++;
@@ -58,7 +62,7 @@ export async function publishCmd(ctx) {
 
       /* 4c. запись в итоговый массив */
       out.push({
-        id:    i + 1,                       // порядковый id для фронта
+        id: i + 1, // порядковый id для фронта
         title: al.title,
         cover: `/gallery/thumbnails/${thumbName}`,
         photos,
@@ -71,7 +75,11 @@ export async function publishCmd(ctx) {
     /* 6. чистим session.json – опционально */
     // u.albums = []; saveStore();
 
-    await ctx.reply('✅ Галерея опубликована! Файлы и JSON готовы.', mainKb());
+    await execa('git', ['add', 'public/gallery'], { cwd: REPO_ROOT });
+    await execa('git', ['commit', '-m', 'bot: update gallery'], { cwd: REPO_ROOT });
+    await execa('git', ['push'], { cwd: REPO_ROOT });
+
+    await ctx.reply('✅ Галерея опубликована и отправлена в репозиторий!', mainKb());
   } catch (e) {
     console.error('[publish]', e);
     await ctx.reply('❌ Ошибка при публикации.', mainKb());

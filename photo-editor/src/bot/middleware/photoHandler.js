@@ -18,17 +18,18 @@ export async function photoMw(ctx) {
   if (u.step === 'wait_cover') {
     const name = `${album.id}-cover.jpg`;
     const dest = path.join(PATHS.storage.covers, name);
-    const buf = await fetch(fileUrl).then(r => r.arrayBuffer()).then(Buffer.from);
+    const buf = await fetch(fileUrl)
+      .then((r) => r.arrayBuffer())
+      .then(Buffer.from);
     await saveCover(buf, dest);
     album.cover = `covers/${name}`;
 
-
-    u.step = 'editing';               // новый статус «внутри альбома»
+    u.step = 'editing'; // новый статус «внутри альбома»
     saveStore();
     return ctx.reply(
-        '✅ Обложка сохранена. \n\nМожешь присылать фото.\n' +
+      '✅ Обложка сохранена. \n\nМожешь присылать фото.\n' +
         'Когда закончишь – нажми \n«Завершить редактирование».',
-        finishEditKb()
+      finishEditKb()
     );
   }
 

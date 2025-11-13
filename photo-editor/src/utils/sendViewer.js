@@ -7,9 +7,11 @@ export async function sendViewer(ctx, userId, album, idx) {
   const relPath = album.photos[idx];
   const absPath = path.join(PATHS.root, 'storage', relPath);
   const publicPath = path.join(PATHS.root, 'public', relPath);
-  const finalPath = (await fs.pathExists(absPath)) ? absPath
-                : (await fs.pathExists(publicPath)) ? publicPath
-                : null;
+  const finalPath = (await fs.pathExists(absPath))
+    ? absPath
+    : (await fs.pathExists(publicPath))
+      ? publicPath
+      : null;
   if (!finalPath) {
     return ctx.reply('❌ Файл не найден на диске.');
   }

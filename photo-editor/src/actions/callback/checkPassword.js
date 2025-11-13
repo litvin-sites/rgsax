@@ -16,11 +16,8 @@ export async function checkPassword(ctx) {
   }
 
   /* просим ввести пароль обычным сообщением */
-  await ctx.answerCbQuery();                    // убираем «часики»
-  userCtx(uid).step = 'wait_password';          // глобальный шаг
+  await ctx.answerCbQuery(); // убираем «часики»
+  userCtx(uid).step = 'wait_password'; // глобальный шаг
   saveStore();
-  return ctx.reply(
-    '🔐 Введите пароль:',
-    Markup.keyboard(['❌ Отмена']).resize()
-  );
+  return ctx.reply('🔐 Введите пароль:', Markup.keyboard(['❌ Отмена']).resize());
 }

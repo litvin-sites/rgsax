@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const TOKEN = process.env.BOT_TOKEN;
-export const PASSWORD = '12345';               // хардкоженный пароль
+export const PASSWORD = '12345'; // хардкоженный пароль
 export const SESSION_TTL_MS = 60 * 60 * 60 * 1000; // 1 час
 
 export const PATHS = {

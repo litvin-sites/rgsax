@@ -1,10 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faTelegram,
-  faVimeo,
-  faVk,
-  faWhatsapp,
-} from '@fortawesome/free-brands-svg-icons';
+import { faTelegram, faVimeo, faVk, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faVideo } from '@fortawesome/free-solid-svg-icons';
 
 const icons = {
@@ -14,8 +9,6 @@ const icons = {
   whatsapp: faWhatsapp,
   vimeo: faVimeo,
 };
-
-
 
 export default function SocialIcon({ kind, href }) {
   return (
@@ -27,10 +20,7 @@ export default function SocialIcon({ kind, href }) {
         className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 transition"
         aria-label={kind}
       >
-        <FontAwesomeIcon
-          icon={icons[kind]}
-          className="text-slate-700"
-        />
+        <FontAwesomeIcon icon={icons[kind]} className="text-slate-700" />
       </a>
     </li>
   );

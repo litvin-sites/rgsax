@@ -5,8 +5,6 @@ import { publishCmd } from './publish.js';
 import { userCtx, saveStore } from '../../store.js';
 import { mainKb } from '../../bot/keyboards.js';
 
-
-
 export function registerCommands(bot) {
   bot.command('start', (ctx) => ctx.scene.enter('startScene'));
   bot.hears('📸 Создать альбом', createAlbumCmd);

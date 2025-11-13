@@ -3,5 +3,5 @@ export const ACTION = {
   next: 'n',
   del: 'd',
   add: 'a',
-  delAlbum: 'delAlbum'
+  delAlbum: 'delAlbum',
 };

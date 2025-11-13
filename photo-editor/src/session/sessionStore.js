@@ -1,6 +1,6 @@
 import { SESSION_TTL_MS } from '../config.js';
 
-let current = null;          // { userId, startedAt }
+let current = null; // { userId, startedAt }
 let waitingList = new Set(); // id-шники ждущих
 
 export function getSession() {
@@ -25,7 +25,9 @@ export function releaseSession() {
   const prev = current.userId;
   current = null;
   // уведомим всех, кто ждал
-  waitingList.forEach(id => global.io?.send(id, '✅ Сеанс освобождён. Нажмите /start чтобы войти.'));
+  waitingList.forEach((id) =>
+    global.io?.send(id, '✅ Сеанс освобождён. Нажмите /start чтобы войти.')
+  );
   waitingList.clear();
   return prev; // вернём id предыдущего владельца
 }

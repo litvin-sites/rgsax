@@ -5,8 +5,8 @@ import { loadStore } from './store.js';
 
 export function loadEnv() {
   // папки
-  Object.values(PATHS.storage).forEach(p => fs.ensureDirSync(p));
-  Object.values(PATHS.public).forEach(p => fs.ensureDirSync(p));
+  Object.values(PATHS.storage).forEach((p) => fs.ensureDirSync(p));
+  Object.values(PATHS.public).forEach((p) => fs.ensureDirSync(p));
   // БД
   loadStore();
   // таймер 1 ч

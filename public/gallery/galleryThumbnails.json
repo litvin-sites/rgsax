@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Пример альбома",
+    "cover": "/gallery/thumbnails/thumbnail-8NiOKZlVLE.jpg",
+    "photos": [
+      {
+        "src": "/gallery/slider-images/slider-1.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-2.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-3.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-4.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-5.jpg"
+      }
+    ]
+  }
+]

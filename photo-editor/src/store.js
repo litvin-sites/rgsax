@@ -3,7 +3,11 @@ import { PATHS } from './config.js';
 
 let store = {};
 export function loadStore() {
-  try { store = fs.readJsonSync(PATHS.db); } catch { store = {}; }
+  try {
+    store = fs.readJsonSync(PATHS.db);
+  } catch {
+    store = {};
+  }
 }
 export function saveStore() {
   fs.writeJsonSync(PATHS.db, store, { spaces: 2 });
