@@ -5,6 +5,7 @@ import { PATHS } from '../../config.js';
 import { userCtx, saveStore } from '../../store.js';
 import { nanoid } from 'nanoid';
 import { mainKb } from '../keyboards.js';
+import { execa } from 'execa'; 
 
 const GALLERY_ROOT = path.join(PATHS.root, '..', 'public', 'gallery');
 const THUMB_DIR = path.join(GALLERY_ROOT, 'thumbnails');
