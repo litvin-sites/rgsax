@@ -4,7 +4,6 @@ import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 export default function ContactForm() {
 	const formHandler = (event) => {
 		event.preventDefault();
-		console.log("form submitted!");
 	};
 
 	return (

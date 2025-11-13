@@ -11,11 +11,9 @@ import { MapMapper, Calendar } from "@/app/svg-icons/svg-icons";
 const galleryThumbnails = [
 	{
 		id: 1,
-		src: "/gallery/thumbnails/thumbnail-1.jpg",
-		club: "The Golden Eagle.",
-		city: "Miami",
-		date: "12/2/2021",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-1.jpg",
+		title: "The Golden Eagle.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-1.jpg" },
 			{ src: "/gallery/slider-images/slider-2.jpg" },
 			{ src: "/gallery/slider-images/slider-3.jpg" },
@@ -23,11 +21,9 @@ const galleryThumbnails = [
 	},
 	{
 		id: 2,
-		src: "/gallery/thumbnails/thumbnail-2.jpg",
-		club: "The Silver Elephant.",
-		city: "Atlanta",
-		date: "23/6/2019",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-2.jpg",
+		title: "The Silver Elephant.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-4.jpg" },
 			{ src: "/gallery/slider-images/slider-5.jpg" },
 			{ src: "/gallery/slider-images/slider-6.jpg" },
@@ -35,11 +31,9 @@ const galleryThumbnails = [
 	},
 	{
 		id: 3,
-		src: "/gallery/thumbnails/thumbnail-3.jpg",
-		club: "The Electric Fox.",
-		city: "Los Angeles",
-		date: "11/3/2019",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-3.jpg",
+		title: "The Electric Fox.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-7.jpg" },
 			{ src: "/gallery/slider-images/slider-8.jpg" },
 			{ src: "/gallery/slider-images/slider-9.jpg" },
@@ -47,11 +41,9 @@ const galleryThumbnails = [
 	},
 	{
 		id: 4,
-		src: "/gallery/thumbnails/thumbnail-4.jpg",
-		club: "The Cool Mouse.",
-		city: "New York",
-		date: "03/12/2018",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-4.jpg",
+		title: "The Cool Mouse.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-10.jpg" },
 			{ src: "/gallery/slider-images/slider-11.jpg" },
 			{ src: "/gallery/slider-images/slider-12.jpg" },
@@ -59,11 +51,9 @@ const galleryThumbnails = [
 	},
 	{
 		id: 5,
-		src: "/gallery/thumbnails/thumbnail-5.jpg",
-		club: "The Super Cat.",
-		city: "Rome",
-		date: "03/03/2018",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-5.jpg",
+		title: "The Super Cat.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-13.jpg" },
 			{ src: "/gallery/slider-images/slider-14.jpg" },
 			{ src: "/gallery/slider-images/slider-15.jpg" },
@@ -71,11 +61,9 @@ const galleryThumbnails = [
 	},
 	{
 		id: 6,
-		src: "/gallery/thumbnails/thumbnail-6.jpg",
-		club: "The Brave Salmon.",
-		city: "Berlin",
-		date: "25/12/2017",
-		slides: [
+		cover: "/gallery/thumbnails/thumbnail-6.jpg",
+		title: "The Brave Salmon.",
+		photos: [
 			{ src: "/gallery/slider-images/slider-16.jpg" },
 			{ src: "/gallery/slider-images/slider-17.jpg" },
 			{ src: "/gallery/slider-images/slider-18.jpg" },
@@ -118,20 +106,21 @@ export default function PhotoGallery() {
 								<div className="w-full h-full rounded-lg bg-fluo-red transition-all">
 									<Image
 										className="rounded-lg cursor-pointer hover:opacity-60 transition-all"
-										src={item.src}
+										src={item.cover}
 										width={400}
 										height={400}
 										alt="Gallery gig thumbnail"
 										onClick={() => clickHandler(index)}
 									/>
 								</div>
+								<h5 className="text-sm md:text-lg xl:text-xl font-medium">{item.title}</h5>
 							</div>
 						);
 					})}
 					<Lightbox
 						open={openGallery}
 						close={() => setOpenGallery(false)}
-						slides={galleryThumbnails[galleryIndex].slides}
+						slides={galleryThumbnails[galleryIndex].photos}
 					/>
 				</div>
 			</Container>

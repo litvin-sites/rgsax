@@ -1,0 +1,29 @@
+{
+  "374971209": {
+    "albums": [
+      {
+        "id": "LE4mWxYQjk",
+        "title": "Альтернативная",
+        "cover": "covers/LE4mWxYQjk-cover.jpg",
+        "photos": [
+          "photos/LE4mWxYQjk-8Pw-3Q.jpg",
+          "photos/LE4mWxYQjk-dpS7-8.jpg",
+          "photos/LE4mWxYQjk-N8JNt8.jpg"
+        ]
+      },
+      {
+        "id": "nZLpGJVgcz",
+        "title": "Пгльмп",
+        "cover": "covers/nZLpGJVgcz-cover.jpg",
+        "photos": [
+          "photos/nZLpGJVgcz-kDdhWc.jpg",
+          "photos/nZLpGJVgcz-jMY6a3.jpg",
+          "photos/nZLpGJVgcz-ycUz2x.jpg",
+          "photos/nZLpGJVgcz-YyKQTA.jpg"
+        ]
+      }
+    ],
+    "current": 2,
+    "step": null
+  }
+}

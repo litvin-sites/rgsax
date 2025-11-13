@@ -50,7 +50,7 @@ export default function About() {
 			</Container>
 			<Image
 				className="w-full mt-5 max-h-96 object-cover lg:mt-0 lg:max-h-none lg:max-w-lg lg:block xl:max-w-xl"
-				src="/__about.jpg"
+				src="/_about.jpg"
 				width={750}
 				height={533}
 				alt="Holding guitar"
