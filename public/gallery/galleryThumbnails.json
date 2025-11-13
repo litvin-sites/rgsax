@@ -20,5 +20,24 @@
         "src": "/gallery/slider-images/slider-5.jpg"
       }
     ]
+  },
+  {
+    "id": 2,
+    "title": "Выступление",
+    "cover": "/gallery/thumbnails/thumbnail-94We85w3Lw.jpg",
+    "photos": [
+      {
+        "src": "/gallery/slider-images/slider-6.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-7.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-8.jpg"
+      },
+      {
+        "src": "/gallery/slider-images/slider-9.jpg"
+      }
+    ]
   }
 ]
