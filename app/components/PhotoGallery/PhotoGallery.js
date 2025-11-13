@@ -4,19 +4,40 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Image from 'next/image';
 import Container from '@/app/global-components/Container/Container';
+import { useRef } from 'react';
+import { useInView } from "framer-motion";
 
 export default function PhotoGallery({ galleryThumbnails = [] }) {
-  const [index, setIndex] = useState(-1);
-  const slides = galleryThumbnails.flatMap((g) => g.photos);
+  const [openGallery, setOpenGallery] = useState(false);
+	const [galleryIndex, setGalleryIndex] = useState(0);
+	const sectionRef = useRef(null);
+	const isInView = useInView(sectionRef, { once: true });
+
+  const clickHandler = (index) => {
+		setOpenGallery(true);
+		setGalleryIndex(index);
+	};
 
   return (
-    <section id="photo-gallery" className="w-full mt-16 pb-14 lg:mt-56 lg:pb-56 lg:mb-90">
+    <section 
+      id="photo-gallery" 
+      className="w-full mt-16 pb-14 lg:mt-56 lg:pb-56 lg:mb-90"
+      style={{
+				transform: isInView ? "none" : "translateY(100px)",
+				opacity: isInView ? 1 : 0,
+				transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+			}}
+      ref={sectionRef}>
       <Container>
-        <h2 className="font-bold text-6xl pb-6">Фото</h2>
+        <div className="overflow-hidden">
+					<h2 className={`font-bold text-6xl pb-6 opacity-0 ${isInView ? "animate-slide-up" : ""}`}>
+						Фото
+					</h2>
+				</div>
         <p>Как это было</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
-          {galleryThumbnails.map((item) => (
+          {galleryThumbnails.map((item, index) => (
             <div className="flex flex-col mb-5 leading-none" key={item.id}>
               <div className="w-full h-full rounded-lg bg-fluo-red transition-all">
                 <Image
@@ -25,15 +46,19 @@ export default function PhotoGallery({ galleryThumbnails = [] }) {
                   width={400}
                   height={400}
                   alt="Gallery thumbnail"
-                  onClick={() => setIndex(item.id - 1)}
+                  onClick={() => clickHandler(index)}
                 />
               </div>
               <h5 className="text-sm md:text-lg xl:text-xl font-medium">{item.title}</h5>
             </div>
           ))}
-        </div>
 
-        <Lightbox open={index >= 0} close={() => setIndex(-1)} index={index} slides={slides} />
+          <Lightbox
+						open={openGallery}
+						close={() => setOpenGallery(false)}
+						slides={galleryThumbnails[galleryIndex].photos}
+					/>
+          </div>
       </Container>
     </section>
   );
