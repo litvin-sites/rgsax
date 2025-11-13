@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc.json",
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": { "version": "detect" }
+  },
+  "rules": {
+    /* Next 13+ не требует import React */
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+
+    /* не заставляем описывать PropTypes */
+    "react/prop-types": "off",
+
+    /* camelCase для DOM-атрибутов (referrerPolicy, not referrerpolicy) */
+    "react/no-unknown-property": ["error", { "ignore": [] }],
+
+    /* Prettier последним слоем */
+    "prettier/prettier": "warn",
+
+    /* можно добавить свои */
+    "no-console": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 import { userCtx, saveStore } from '../../store.js';
-import { getAlbum } from './_utils.js';
 import { deletePhotoFile } from '../../utils/deletePhotoFile.js';
 
 export async function deleteAlbum(ctx, userId, albumId) {

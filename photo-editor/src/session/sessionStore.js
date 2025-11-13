@@ -7,6 +7,7 @@ export function getSession() {
   if (!current) return null;
   const age = Date.now() - current.startedAt;
   if (age > SESSION_TTL_MS) {
+    // eslint-disable-next-line no-undef
     console.log(`[auto-release] user ${current.userId}`);
     releaseSession();
     return null;
@@ -15,7 +16,7 @@ export function getSession() {
 }
 
 export function occupySession(userId) {
-  releaseSession(); // высвободим старого, если TTL вышел
+  releaseSession();
   current = { userId, startedAt: Date.now() };
   return true;
 }
@@ -24,12 +25,8 @@ export function releaseSession() {
   if (!current) return;
   const prev = current.userId;
   current = null;
-  // уведомим всех, кто ждал
-  waitingList.forEach((id) =>
-    global.io?.send(id, '✅ Сеанс освобождён. Нажмите /start чтобы войти.')
-  );
   waitingList.clear();
-  return prev; // вернём id предыдущего владельца
+  return prev;
 }
 
 export function addToWaiting(userId) {

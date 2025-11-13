@@ -1,4 +1,4 @@
-import { Telegraf, session, Scenes } from 'telegraf';
+import { Telegraf, session } from 'telegraf';
 import { TOKEN } from '../config.js';
 import { sessionGate } from '../session/middleware.js';
 import { scenesMiddleware } from './scenes/index.js';
@@ -28,6 +28,8 @@ registerMiddleware(globalBot);
 
 export function launchBot() {
   globalBot.launch();
+  // eslint-disable-next-line no-undef
   process.once('SIGINT', () => globalBot.stop());
+  // eslint-disable-next-line no-undef
   process.once('SIGTERM', () => globalBot.stop());
 }

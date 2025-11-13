@@ -8,6 +8,7 @@ export async function sendStartButton(bot, userId) {
       startKb()
     );
   } catch (e) {
-    /* пользователь заблокировал бота / удалил чат – игнорируем */
+    // eslint-disable-next-line no-undef
+    console.log(e);
   }
 }

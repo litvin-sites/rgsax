@@ -1,4 +1,4 @@
-import { userCtx, saveStore } from '../../store.js';
+import { saveStore } from '../../store.js';
 import { getAlbum, fileExists } from './_utils.js';
 import { deletePhotoFile } from '../../utils/deletePhotoFile.js';
 import { Markup } from 'telegraf';

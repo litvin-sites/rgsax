@@ -1,4 +1,6 @@
 import { userCtx, saveStore } from '../../store.js';
+import { getSession } from '../../session/sessionStore.js';
+import { Markup } from 'telegraf';
 
 export async function checkPassword(ctx) {
   const uid = String(ctx.from.id);

@@ -10,6 +10,7 @@ import PhotoGallery from './components/PhotoGallery/PhotoGallery';
 import TextParallax from './components/TextParallax/TextParallax';
 
 export default async function Home() {
+  // eslint-disable-next-line no-undef
   const jsonPath = path.join(process.cwd(), 'public', 'gallery', 'galleryThumbnails.json');
   let galleryThumbnails = [];
 
@@ -17,7 +18,8 @@ export default async function Home() {
     const raw = await fs.readFile(jsonPath, 'utf-8');
     galleryThumbnails = JSON.parse(raw);
   } catch (e) {
-    console.warn('galleryThumbnails.json не найден – показываем пустую галерею');
+    // eslint-disable-next-line no-undef
+    console.warn('galleryThumbnails.json не найден – показываем пустую галерею', e);
   }
 
   return (

@@ -12,9 +12,20 @@
           "photos/8NiOKZlVLE-PLpBXn.jpg",
           "photos/8NiOKZlVLE-vNxpf1.jpg"
         ]
+      },
+      {
+        "id": "94We85w3Lw",
+        "title": "Выступление",
+        "cover": "covers/94We85w3Lw-cover.jpg",
+        "photos": [
+          "photos/94We85w3Lw-Zpx5en.jpg",
+          "photos/94We85w3Lw-NU5t_-.jpg",
+          "photos/94We85w3Lw-Wyrpg0.jpg",
+          "photos/94We85w3Lw-hfKBTD.jpg"
+        ]
       }
     ],
-    "current": 0,
+    "current": 1,
     "step": null
   }
 }

@@ -1,12 +1,11 @@
 import fs from 'fs-extra';
 import path from 'path';
-import sharp from 'sharp';
 import { PATHS } from '../../config.js';
-import { userCtx, saveStore } from '../../store.js';
-import { nanoid } from 'nanoid';
+import { userCtx } from '../../store.js';
 import { mainKb } from '../keyboards.js';
-import { execa } from 'execa'; 
+import { execa } from 'execa';
 
+const REPO_ROOT = path.join(PATHS.root, '..'); // корень репозитория
 const GALLERY_ROOT = path.join(PATHS.root, '..', 'public', 'gallery');
 const THUMB_DIR = path.join(GALLERY_ROOT, 'thumbnails');
 const SLIDER_DIR = path.join(GALLERY_ROOT, 'slider-images');
@@ -38,10 +37,10 @@ export async function publishCmd(ctx) {
 
       /* 4a. обложка → thumbnail-{id}.jpg (400×400) */
       const thumbName = `thumbnail-${al.id}.jpg`;
-      const thumbDest = path.join(THUMB_DIR, thumbName);
       if (al.cover) {
         const coverPath = path.join(PATHS.root, 'storage', al.cover);
         if (!(await fs.pathExists(coverPath))) {
+          // eslint-disable-next-line no-undef
           console.warn('[publish] обложка не найдена:', coverPath);
         } else {
           // копируем готовый 400×400-файл
@@ -82,6 +81,7 @@ export async function publishCmd(ctx) {
 
     await ctx.reply('✅ Галерея опубликована и отправлена в репозиторий!', mainKb());
   } catch (e) {
+    // eslint-disable-next-line no-undef
     console.error('[publish]', e);
     await ctx.reply('❌ Ошибка при публикации.', mainKb());
   }

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // animateScroll.js
 
 const pow = Math.pow;

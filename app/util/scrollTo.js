@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { animateScroll } from './animate-scroll';
 
 const logError = () =>

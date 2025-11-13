@@ -1,11 +1,10 @@
 import { userCtx, saveStore } from '../../store.js';
-import { mainKb, finishEditKb } from '../keyboards.js';
+import { finishEditKb } from '../keyboards.js';
 import { PATHS } from '../../config.js';
 import path from 'path';
 import { downloadPhoto } from '../../utils/downloadPhoto.js';
 import { saveCover } from '../../utils/resizeCover.js';
 import { nanoid } from 'nanoid';
-import fs from 'fs-extra';
 
 export async function photoMw(ctx) {
   const u = userCtx(ctx.from.id);
@@ -18,8 +17,10 @@ export async function photoMw(ctx) {
   if (u.step === 'wait_cover') {
     const name = `${album.id}-cover.jpg`;
     const dest = path.join(PATHS.storage.covers, name);
+    // eslint-disable-next-line no-undef
     const buf = await fetch(fileUrl)
       .then((r) => r.arrayBuffer())
+      // eslint-disable-next-line no-undef
       .then(Buffer.from);
     await saveCover(buf, dest);
     album.cover = `covers/${name}`;
@@ -37,6 +38,7 @@ export async function photoMw(ctx) {
   const name = `${album.id}-${nanoid(6)}.jpg`;
   const dest = path.join(PATHS.storage.photos, name);
   await downloadPhoto(fileUrl, dest);
+  // eslint-disable-next-line no-undef
   console.log('[photoHandler] записал файл:', dest);
   album.photos.push(`photos/${name}`);
   saveStore();
