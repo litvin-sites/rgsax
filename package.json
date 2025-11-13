@@ -1,12 +1,12 @@
 {
   "name": "imagination",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "echo lint skip",    
+    "lint": "echo lint skip",
     "test": "echo test skip",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
