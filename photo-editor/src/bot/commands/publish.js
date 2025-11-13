@@ -4,6 +4,7 @@ import { PATHS } from '../../config.js';
 import { userCtx } from '../../store.js';
 import { mainKb } from '../keyboards.js';
 import { execa } from 'execa';
+import { canPublish, markPublished, MARK_FILE } from '../../utils/publish-helpers.js';
 
 const REPO_ROOT = path.join(PATHS.root, '..'); // корень репозитория
 const GALLERY_ROOT = path.join(PATHS.root, '..', 'public', 'gallery');
@@ -15,7 +16,14 @@ const META_FILE = path.join(GALLERY_ROOT, 'galleryThumbnails.json');
 export async function publishCmd(ctx) {
   const uid = String(ctx.from.id);
   const u = userCtx(uid);
+
   if (!u.albums.length) return ctx.reply('📂 Нет альбомов для публикации.', mainKb());
+
+  if (!(await canPublish())) {
+    const msLeft = 24 * 60 * 60 * 1000 - (Date.now() - Number(await fs.readFile(MARK_FILE, 'utf-8')));
+    const hours = Math.floor(msLeft / 3600000);
+    return ctx.reply(`⏳ Публикация возможна через ${hours} ч.`, mainKb());
+  }
 
   await ctx.reply('🚀 Начинаю публикацию…');
 
@@ -84,5 +92,7 @@ export async function publishCmd(ctx) {
     // eslint-disable-next-line no-undef
     console.error('[publish]', e);
     await ctx.reply('❌ Ошибка при публикации.', mainKb());
+  } finally {
+    await markPublished();
   }
 }
