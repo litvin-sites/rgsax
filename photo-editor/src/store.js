@@ -13,6 +13,6 @@ export function saveStore() {
   fs.writeJsonSync(PATHS.db, store, { spaces: 2 });
 }
 export function userCtx(uid) {
-  if (!store[uid]) store[uid] = { albums: [], current: 0, step: null };
-  return store[uid];
+  if (!store['user']) store['user'] = { albums: [], current: 0, step: null };
+  return store['user'];
 }

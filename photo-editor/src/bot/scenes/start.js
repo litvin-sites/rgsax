@@ -17,7 +17,7 @@ startScene.enter(async (ctx) => {
   // занято – ставим в очередь
   if (s && s.userId !== uid) {
     addToWaiting(uid);
-    return ctx.reply('⛔ Сеанс занят. Когда освободится – придёт уведомление.', {
+    return ctx.reply('⛔ Сеанс занят. Попробуйте через час.', {
       reply_markup: { remove_keyboard: true },
     });
   }

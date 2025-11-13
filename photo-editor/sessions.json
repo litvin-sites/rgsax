@@ -1,5 +1,5 @@
 {
-  "374971209": {
+  "user": {
     "albums": [
       {
         "id": "8NiOKZlVLE",
@@ -7,7 +7,6 @@
         "cover": "covers/8NiOKZlVLE-cover.jpg",
         "photos": [
           "photos/8NiOKZlVLE-DEp72V.jpg",
-          "photos/8NiOKZlVLE-ZrMqns.jpg",
           "photos/8NiOKZlVLE-87JJgE.jpg",
           "photos/8NiOKZlVLE-PLpBXn.jpg",
           "photos/8NiOKZlVLE-vNxpf1.jpg"
@@ -26,7 +25,7 @@
         ]
       }
     ],
-    "current": 1,
+    "current": 0,
     "step": null
   }
 }
