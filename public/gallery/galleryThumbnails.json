@@ -1,45 +1,81 @@
 [
   {
     "id": 1,
-    "title": "Пример альбома",
-    "cover": "/gallery/thumbnails/thumbnail-8NiOKZlVLE.jpg",
+    "title": "первый",
+    "cover": "/gallery/thumbnails/thumbnail-uVddtLG-Yw.jpg",
     "photos": [
       {
         "src": "/gallery/slider-images/slider-1.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "2",
+    "cover": "/gallery/thumbnails/thumbnail-OLZBFtCFT7.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-2.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "3",
+    "cover": "/gallery/thumbnails/thumbnail-nsv0nUkGwi.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-3.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "5",
+    "cover": "/gallery/thumbnails/thumbnail-OlodzEIGDV.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-4.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "6",
+    "cover": "/gallery/thumbnails/thumbnail-CqFpSSNVcR.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-5.jpg"
       }
     ]
   },
   {
-    "id": 2,
-    "title": "Выступление",
-    "cover": "/gallery/thumbnails/thumbnail-94We85w3Lw.jpg",
+    "id": 6,
+    "title": "7",
+    "cover": "/gallery/thumbnails/thumbnail-TsTs9Y4br7.jpg",
     "photos": [
       {
         "src": "/gallery/slider-images/slider-6.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "8",
+    "cover": "/gallery/thumbnails/thumbnail-AYrJYBhW18.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-7.jpg"
-      },
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "4",
+    "cover": "/gallery/thumbnails/thumbnail-c5Rygeucdd.jpg",
+    "photos": [
       {
         "src": "/gallery/slider-images/slider-8.jpg"
-      },
-      {
-        "src": "/gallery/slider-images/slider-9.jpg"
-      },
-      {
-        "src": "/gallery/slider-images/slider-10.jpg"
       }
     ]
   }
