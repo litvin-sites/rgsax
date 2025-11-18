@@ -49,7 +49,6 @@ export default function PhotoGallery({ galleryThumbnails = [] }) {
                   onClick={() => clickHandler(index)}
                 />
               </div>
-              <h5 className="text-sm md:text-lg xl:text-xl font-medium">{item.title}</h5>
             </div>
           ))}
 

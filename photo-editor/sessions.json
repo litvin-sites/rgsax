@@ -2,30 +2,71 @@
   "user": {
     "albums": [
       {
-        "id": "8NiOKZlVLE",
-        "title": "Пример альбома",
-        "cover": "covers/8NiOKZlVLE-cover.jpg",
+        "id": "uVddtLG-Yw",
+        "title": "первый",
+        "cover": "covers/uVddtLG-Yw-cover.jpg",
         "photos": [
-          "photos/8NiOKZlVLE-DEp72V.jpg",
-          "photos/8NiOKZlVLE-87JJgE.jpg",
-          "photos/8NiOKZlVLE-PLpBXn.jpg",
-          "photos/8NiOKZlVLE-vNxpf1.jpg"
+          "photos/uVddtLG-Yw--30Y0O.jpg"
         ]
       },
       {
-        "id": "94We85w3Lw",
-        "title": "Выступление",
-        "cover": "covers/94We85w3Lw-cover.jpg",
+        "id": "OLZBFtCFT7",
+        "title": "2",
+        "cover": "covers/OLZBFtCFT7-cover.jpg",
         "photos": [
-          "photos/94We85w3Lw-Zpx5en.jpg",
-          "photos/94We85w3Lw-NU5t_-.jpg",
-          "photos/94We85w3Lw-Wyrpg0.jpg",
-          "photos/94We85w3Lw-hfKBTD.jpg",
-          "photos/94We85w3Lw-6WTNri.jpg"
+          "photos/OLZBFtCFT7-nFqt8d.jpg"
+        ]
+      },
+      {
+        "id": "nsv0nUkGwi",
+        "title": "3",
+        "cover": "covers/nsv0nUkGwi-cover.jpg",
+        "photos": [
+          "photos/nsv0nUkGwi-xNM3UI.jpg"
+        ]
+      },
+      {
+        "id": "OlodzEIGDV",
+        "title": "5",
+        "cover": "covers/OlodzEIGDV-cover.jpg",
+        "photos": [
+          "photos/OlodzEIGDV-hkcBgo.jpg"
+        ]
+      },
+      {
+        "id": "CqFpSSNVcR",
+        "title": "6",
+        "cover": "covers/CqFpSSNVcR-cover.jpg",
+        "photos": [
+          "photos/CqFpSSNVcR-PDyr7L.jpg"
+        ]
+      },
+      {
+        "id": "TsTs9Y4br7",
+        "title": "7",
+        "cover": "covers/TsTs9Y4br7-cover.jpg",
+        "photos": [
+          "photos/TsTs9Y4br7-DtZQ6o.jpg"
+        ]
+      },
+      {
+        "id": "AYrJYBhW18",
+        "title": "8",
+        "cover": "covers/AYrJYBhW18-cover.jpg",
+        "photos": [
+          "photos/AYrJYBhW18-VbvgEP.jpg"
+        ]
+      },
+      {
+        "id": "c5Rygeucdd",
+        "title": "4",
+        "cover": "covers/c5Rygeucdd-cover.jpg",
+        "photos": [
+          "photos/c5Rygeucdd-ryTupi.jpg"
         ]
       }
     ],
-    "current": 0,
+    "current": 7,
     "step": null
   }
 }
