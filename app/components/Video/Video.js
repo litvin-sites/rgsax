@@ -46,7 +46,7 @@ export default function Video() {
             height="360"
             frameBorder="0"
             referrerPolicy="strict-origin-when-cross-origin"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             allowFullScreen
           ></iframe>
         </div>
