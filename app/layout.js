@@ -1,4 +1,5 @@
 import Footer from './components/Footer/Footer';
+import YaMetrica from './components/YaMetrica/YaMetrica'; 
 import './globals.css';
 import { Poppins, Permanent_Marker, Rock_Salt } from 'next/font/google';
 
@@ -124,6 +125,7 @@ export default function RootLayout({ children }) {
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${poppins.className} font-rendering text-2xl xl:text-3xl`}>
+        <YaMetrica />  
         {children}
         <Footer />
       </body>
