@@ -29,6 +29,7 @@
     "motion": "^11.14.4",
     "nanoid": "^5.1.6",
     "next": "^15.5.2",
+    "next-yandex-metrica": "^1.2.3",
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.31",
     "react": "19.1.0",

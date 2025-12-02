@@ -20,7 +20,8 @@ export async function publishCmd(ctx) {
   if (!u.albums.length) return ctx.reply('📂 Нет альбомов для публикации.', mainKb());
 
   if (!(await canPublish())) {
-    const msLeft = 24 * 60 * 60 * 1000 - (Date.now() - Number(await fs.readFile(MARK_FILE, 'utf-8')));
+    const msLeft =
+      24 * 60 * 60 * 1000 - (Date.now() - Number(await fs.readFile(MARK_FILE, 'utf-8')));
     const hours = Math.floor(msLeft / 3600000);
     return ctx.reply(`⏳ Публикация возможна через ${hours} ч.`, mainKb());
   }

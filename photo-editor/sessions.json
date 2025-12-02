@@ -5,65 +5,49 @@
         "id": "uVddtLG-Yw",
         "title": "первый",
         "cover": "covers/uVddtLG-Yw-cover.jpg",
-        "photos": [
-          "photos/uVddtLG-Yw--30Y0O.jpg"
-        ]
+        "photos": ["photos/uVddtLG-Yw--30Y0O.jpg"]
       },
       {
         "id": "OLZBFtCFT7",
         "title": "2",
         "cover": "covers/OLZBFtCFT7-cover.jpg",
-        "photos": [
-          "photos/OLZBFtCFT7-nFqt8d.jpg"
-        ]
+        "photos": ["photos/OLZBFtCFT7-nFqt8d.jpg"]
       },
       {
         "id": "nsv0nUkGwi",
         "title": "3",
         "cover": "covers/nsv0nUkGwi-cover.jpg",
-        "photos": [
-          "photos/nsv0nUkGwi-xNM3UI.jpg"
-        ]
+        "photos": ["photos/nsv0nUkGwi-xNM3UI.jpg"]
       },
       {
         "id": "OlodzEIGDV",
         "title": "5",
         "cover": "covers/OlodzEIGDV-cover.jpg",
-        "photos": [
-          "photos/OlodzEIGDV-hkcBgo.jpg"
-        ]
+        "photos": ["photos/OlodzEIGDV-hkcBgo.jpg"]
       },
       {
         "id": "CqFpSSNVcR",
         "title": "6",
         "cover": "covers/CqFpSSNVcR-cover.jpg",
-        "photos": [
-          "photos/CqFpSSNVcR-PDyr7L.jpg"
-        ]
+        "photos": ["photos/CqFpSSNVcR-PDyr7L.jpg"]
       },
       {
         "id": "TsTs9Y4br7",
         "title": "7",
         "cover": "covers/TsTs9Y4br7-cover.jpg",
-        "photos": [
-          "photos/TsTs9Y4br7-DtZQ6o.jpg"
-        ]
+        "photos": ["photos/TsTs9Y4br7-DtZQ6o.jpg"]
       },
       {
         "id": "AYrJYBhW18",
         "title": "8",
         "cover": "covers/AYrJYBhW18-cover.jpg",
-        "photos": [
-          "photos/AYrJYBhW18-VbvgEP.jpg"
-        ]
+        "photos": ["photos/AYrJYBhW18-VbvgEP.jpg"]
       },
       {
         "id": "c5Rygeucdd",
         "title": "4",
         "cover": "covers/c5Rygeucdd-cover.jpg",
-        "photos": [
-          "photos/c5Rygeucdd-ryTupi.jpg"
-        ]
+        "photos": ["photos/c5Rygeucdd-ryTupi.jpg"]
       }
     ],
     "current": 7,

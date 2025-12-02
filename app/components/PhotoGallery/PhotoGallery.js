@@ -5,35 +5,36 @@ import 'yet-another-react-lightbox/styles.css';
 import Image from 'next/image';
 import Container from '@/app/global-components/Container/Container';
 import { useRef } from 'react';
-import { useInView } from "framer-motion";
+import { useInView } from 'framer-motion';
 
 export default function PhotoGallery({ galleryThumbnails = [] }) {
   const [openGallery, setOpenGallery] = useState(false);
-	const [galleryIndex, setGalleryIndex] = useState(0);
-	const sectionRef = useRef(null);
-	const isInView = useInView(sectionRef, { once: true });
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
 
   const clickHandler = (index) => {
-		setOpenGallery(true);
-		setGalleryIndex(index);
-	};
+    setOpenGallery(true);
+    setGalleryIndex(index);
+  };
 
   return (
-    <section 
-      id="photo-gallery" 
+    <section
+      id="photo-gallery"
       className="w-full mt-16 pb-14 lg:mt-56 lg:pb-56 lg:mb-90"
       style={{
-				transform: isInView ? "none" : "translateY(100px)",
-				opacity: isInView ? 1 : 0,
-				transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-			}}
-      ref={sectionRef}>
+        transform: isInView ? 'none' : 'translateY(100px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
+      }}
+      ref={sectionRef}
+    >
       <Container>
         <div className="overflow-hidden">
-					<h2 className={`font-bold text-6xl pb-6 opacity-0 ${isInView ? "animate-slide-up" : ""}`}>
-						Фото
-					</h2>
-				</div>
+          <h2 className={`font-bold text-6xl pb-6 opacity-0 ${isInView ? 'animate-slide-up' : ''}`}>
+            Фото
+          </h2>
+        </div>
         <p>Как это было</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
@@ -53,11 +54,11 @@ export default function PhotoGallery({ galleryThumbnails = [] }) {
           ))}
 
           <Lightbox
-						open={openGallery}
-						close={() => setOpenGallery(false)}
-						slides={galleryThumbnails[galleryIndex].photos}
-					/>
-          </div>
+            open={openGallery}
+            close={() => setOpenGallery(false)}
+            slides={galleryThumbnails[galleryIndex].photos}
+          />
+        </div>
       </Container>
     </section>
   );
